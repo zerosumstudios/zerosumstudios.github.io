@@ -1,0 +1,13 @@
+<header>
+    <div class="container">
+        <div class="title">
+            <a href="/"><img src="img/zerosum-studios-logo.png" style="width: 183px; height: 50px;" /></a>
+        </div>
+        <div class="menu">
+            <a {% if page.url == '/about/index.html' %}class="current" {% endif %}href="/about">ABOUT</a>
+            <a {% if page.url != '/about/index.html' and page.url != '/projects/index.html' %}class="current" {% endif %}href="/">GAMES</a>
+        </div>
+    </div>
+</header>
+
+<div class="menu-bar"></div>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }} | David Robles</title>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,700,800,600" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/main.css">
+{% if page.style %}
+    {% for style in page.style do %}
+        <link rel="stylesheet" href="/css/{{style}}">
+    {% endfor %}
+{% endif %}
+<script src="/js/lib/jquery-2.1.3.min.js"></script>
+{% if page.js %}
+    {% for js in page.js do %}
+        <script src="/js/{{js}}"></script>
+    {% endfor %}
+{% endif %}
+</head>
+
+<body>
+
+{% include header.html %}
+
+<div class="container">
+    <div class="content">
+        {{ content }}
+    </div>
+</div>
+
+<footer>
+    <div><a href="/privacy">Privacy Policy</a></div>
+    <p>Copyright &copy; 2015 Zerosum Studios. All Rights Reserved.</p>
+</footer>
+
+{% if page.jsExternal %}
+    {% for js in page.jsExternal do %}
+        <script src="{{js}}"></script>
+    {% endfor %}
+{% endif %}
+
+{% if page.js %}
+    {% for js in page.js do %}
+        <script src="/js/{{js}}"></script>
+    {% endfor %}
+{% endif %}
+
+{% include google-analytics.js %}
+
+</body>
+</html>
